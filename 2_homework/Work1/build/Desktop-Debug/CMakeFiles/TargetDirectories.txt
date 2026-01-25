@@ -1,0 +1,9 @@
+/home/denis/Qt_Homeworks/2_homework/Work1/build/Desktop-Debug/CMakeFiles/Work1.dir
+/home/denis/Qt_Homeworks/2_homework/Work1/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/denis/Qt_Homeworks/2_homework/Work1/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/denis/Qt_Homeworks/2_homework/Work1/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/denis/Qt_Homeworks/2_homework/Work1/build/Desktop-Debug/CMakeFiles/install.dir
+/home/denis/Qt_Homeworks/2_homework/Work1/build/Desktop-Debug/CMakeFiles/install/local.dir
+/home/denis/Qt_Homeworks/2_homework/Work1/build/Desktop-Debug/CMakeFiles/install/strip.dir
+/home/denis/Qt_Homeworks/2_homework/Work1/build/Desktop-Debug/CMakeFiles/Work1_autogen_timestamp_deps.dir
+/home/denis/Qt_Homeworks/2_homework/Work1/build/Desktop-Debug/CMakeFiles/Work1_autogen.dir

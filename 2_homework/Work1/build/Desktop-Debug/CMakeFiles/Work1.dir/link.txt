@@ -1,0 +1,1 @@
+/usr/bin/g++-13 -DQT_QML_DEBUG -g CMakeFiles/Work1.dir/Work1_autogen/mocs_compilation.cpp.o CMakeFiles/Work1.dir/main.cpp.o -o Work1  /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2 /usr/lib/x86_64-linux-gnu/libQt6Sql.so.6.4.2 /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.4.2 
