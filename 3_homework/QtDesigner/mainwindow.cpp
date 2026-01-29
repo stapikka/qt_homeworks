@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     myDialog = new Dialog();
+
 }
 
 MainWindow::~MainWindow()
