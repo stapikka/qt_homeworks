@@ -1,0 +1,9 @@
+/home/denis/Qt_Homeworks/4_homework/QtWidgets/build/Desktop-Debug/CMakeFiles/QtWidgets.dir
+/home/denis/Qt_Homeworks/4_homework/QtWidgets/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/denis/Qt_Homeworks/4_homework/QtWidgets/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/denis/Qt_Homeworks/4_homework/QtWidgets/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/denis/Qt_Homeworks/4_homework/QtWidgets/build/Desktop-Debug/CMakeFiles/install.dir
+/home/denis/Qt_Homeworks/4_homework/QtWidgets/build/Desktop-Debug/CMakeFiles/install/local.dir
+/home/denis/Qt_Homeworks/4_homework/QtWidgets/build/Desktop-Debug/CMakeFiles/install/strip.dir
+/home/denis/Qt_Homeworks/4_homework/QtWidgets/build/Desktop-Debug/CMakeFiles/QtWidgets_autogen_timestamp_deps.dir
+/home/denis/Qt_Homeworks/4_homework/QtWidgets/build/Desktop-Debug/CMakeFiles/QtWidgets_autogen.dir

@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+e9e7cf77b74808f808ae104deb6d2124 CMakeFiles/QtWidgets_autogen
+e9e7cf77b74808f808ae104deb6d2124 CMakeFiles/QtWidgets_autogen_timestamp_deps
+f7b1169ab6c61207bfe452d7902a6198 QtWidgets_autogen/timestamp
