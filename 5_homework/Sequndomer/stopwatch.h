@@ -2,6 +2,8 @@
 #define STOPWATCH_H
 
 #include <QObject>
+#include <QTime>
+#include <QTimer>
 
 class Stopwatch : public QObject
 {
@@ -9,14 +11,35 @@ class Stopwatch : public QObject
 public:
     explicit Stopwatch(QObject *parent = nullptr);
 
-    void SendSignal();
-    void SendSignalWithString(const QString &str);
 
     ~Stopwatch();
 
+    void start();
+    void stop();
+    void reset();
+    void lap();
+
+    bool isRunning() const;
+    QString getTimeString() const;
+    QString getLastLapTime() const;
+
+    QTime getCurrentTime() const;
 signals:
-    void sig_SendSimpleSignal();
-    void sig_SendSignal(QString str);
+
+    void sig_timeUpdated(const QString& time);
+    void sig_lapTimeAdded(const QString& lapTime);
+    void sig_stateChanged(bool running);
+
+private slots:
+    void updateTimer();
+
+private:
+    QTimer *timer;
+    QTime startTime;
+    QTime elapsedTime;
+    QTime lastLapTime;
+    bool running;
+    int lapCount;
 
 };
 

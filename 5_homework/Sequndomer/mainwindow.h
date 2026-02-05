@@ -22,12 +22,12 @@ public:
 
 private slots:
     void on_pb_start_clicked();
-    void ReceiveSimpleSignal();
-    void ReceiveSignal(QString str);
-
     void on_pb_lap_clicked();
-
     void on_pb_clear_clicked();
+
+    void onTimeUpdated(const QString &time);
+    void onLapTimeAdded(const QString &lapTime);
+    void onStateChanged(bool running);
 
 private:
     Ui::MainWindow *ui;

@@ -9,9 +9,22 @@ MainWindow::MainWindow(QWidget *parent)
 
     sec = new Stopwatch(this);
 
-    connect(sec, &Stopwatch::sig_SendSimpleSignal, this, &MainWindow::ReceiveSimpleSignal);
 
-    connect(sec, &Stopwatch::sig_SendSignal, this, &MainWindow::ReceiveSignal);
+    // Когда секундомер обновляет время -> обновляем label
+    connect(sec, &Stopwatch::sig_timeUpdated, this, &MainWindow::onTimeUpdated);
+
+    // Когда добавляется круг -> добавляем в текстовый браузер
+    connect(sec, &Stopwatch::sig_lapTimeAdded,this, &MainWindow::onLapTimeAdded);
+
+    // Когда меняется состояние -> обновляем кнопки
+    connect(sec, &Stopwatch::sig_stateChanged,this, &MainWindow::onStateChanged);
+
+    // Начальное состояние
+    ui->lb_time->setText("00:00.000");
+    ui->pb_lap->setEnabled(false);
+    ui->pb_start->setText("Старт");
+
+    qDebug() << "MainWindow CREATED";
 
 }
 
@@ -25,30 +38,44 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pb_start_clicked()
 {
-    sec->SendSignal();
-}
+    if (sec->isRunning()) {
 
-void MainWindow::ReceiveSimpleSignal()
-{
-    ui->tb_info->append(QString("Принят простой сигнал"));
-    qDebug() << "Принят простой сигнал";
+        sec->stop();
+    } else {
+        sec->start();
+    }
 }
-
-void MainWindow::ReceiveSignal(QString str)
-{
-    ui->tb_info->append(QString("Принят сигнал со строкой: '%1'").arg(str));
-    qDebug() << "Принят сигнал со строкой:" << str;
-}
-
 
 void MainWindow::on_pb_lap_clicked()
 {
+    sec->reset();
     ui->tb_info->clear();
 }
 
 
 void MainWindow::on_pb_clear_clicked()
 {
-    sec->SendSignalWithString(ui->lb_time->text());
+    sec->lap();
+}
+
+void MainWindow::onTimeUpdated(const QString &time)
+{
+    ui->lb_time->setText(time);
+}
+
+void MainWindow::onLapTimeAdded(const QString &lapTime)
+{
+    ui->tb_info->append(lapTime);
+}
+
+void MainWindow::onStateChanged(bool running)
+{
+    if(running) {
+        ui->pb_start->setText("Стоп");
+        ui->pb_lap->setEnabled(true);
+    } else {
+        ui->pb_start->setText("Старт");
+        ui->pb_lap->setEnabled(false);
+    }
 }
 
