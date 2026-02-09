@@ -143,12 +143,21 @@ void MainWindow::ScreenDataFromDB(const QTableWidget *widget, int typeRequest)
 
     ///Тут должен быть код ДЗ
 
-    ui->tableView->setModel(
-        const_cast<QAbstractItemModel*>(
-            reinterpret_cast<const QAbstractItemModel*>(widget)
-            )
+    auto model = const_cast<QAbstractItemModel*>(
+        reinterpret_cast<const QAbstractItemModel*>(widget)
         );
 
+    ui->tableView->setModel(model);
+
+    if (typeRequest == requestAllFilms)
+    {
+
+        for (int col = 0; col < model->columnCount(); ++col)
+        {
+            if (col != 1 && col != 2) // ← индексы столбцов в таблице film
+                ui->tableView->hideColumn(col);
+        }
+    }
 
 }
 /*!
