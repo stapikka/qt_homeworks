@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lb_time->setText("00:00.000");
     ui->pb_lap->setEnabled(false);
     ui->pb_start->setText("Старт");
+    sec->reset();
 
     qDebug() << "MainWindow CREATED";
 
@@ -48,14 +49,14 @@ void MainWindow::on_pb_start_clicked()
 
 void MainWindow::on_pb_lap_clicked()
 {
-    sec->reset();
-    ui->tb_info->clear();
+    sec->lap();
 }
 
 
 void MainWindow::on_pb_clear_clicked()
 {
-    sec->lap();
+    sec->reset();
+    ui->tb_info->clear();
 }
 
 void MainWindow::onTimeUpdated(const QString &time)

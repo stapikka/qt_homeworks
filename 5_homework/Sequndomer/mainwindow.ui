@@ -59,14 +59,14 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pb_clear">
+        <widget class="QPushButton" name="pb_lap">
          <property name="text">
           <string>КРУГ</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pb_lap">
+        <widget class="QPushButton" name="pb_clear">
          <property name="text">
           <string>ОЧИСТИТЬ</string>
          </property>
