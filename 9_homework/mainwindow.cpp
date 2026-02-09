@@ -12,10 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(udpWorker, &UDPworker::sig_sendTimeToGUI, this, &MainWindow::DisplayTime);
     connect(udpWorker, &UDPworker::sig_sendTextToGUI, this, &MainWindow::DisplayText);
-    connect(udpWorker, &UDPworker::sig_sendTextToGUI,
-            this, [&](QString text){
-                ui->te_result->append(text);
-            });
 
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, [&]{
@@ -27,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
 
         outStr << dateTime;
 
-        udpWorker->SendDatagram(dataToSend);
+        udpWorker->SendTimeDatagram(dataToSend);
     });
 
 }
@@ -72,10 +68,9 @@ void MainWindow::DisplayText(QString text)
 void MainWindow::on_pb_send_clicked()
 {
     QString text = ui->te_inputtext->toPlainText();
-    if(text.isEmpty())
+    if (text.isEmpty())
         return;
 
-    QByteArray data = text.toUtf8();
-    udpWorker->SendDatagram(data);
+    udpWorker->SendTextDatagram(text.toUtf8());
 }
 
